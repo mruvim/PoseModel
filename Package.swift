@@ -6,10 +6,15 @@ import PackageDescription
 let package = Package(
     name: "PoseModel",
     platforms: [.iOS(.v15)],
-    products: [ .library(name: "PoseModel", targets: ["PoseModel", "BodyPoseLibrary"])],
+    products: [
+        .library(
+            name: "PoseModel",
+            targets: ["PoseModel"]),
+    ],
     targets: [
         .target(name: "PoseModel"),
-        .binaryTarget(name: "BodyPoseLibrary", path: "./BodyPoseLibrary.xcframework"),
-        .testTarget(name: "PoseModelTests", dependencies: ["PoseModel"]),
+        .testTarget(
+            name: "PoseModelTests",
+            dependencies: ["PoseModel"]),
     ]
 )
